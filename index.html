@@ -3,50 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful | Download Your File</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Premium Digital Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #000; --accent: #10B981; --bg: #ffffff; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--primary); margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
+        :root { --primary: #000; --secondary: #555; --accent: #00c853; --white: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--primary); margin: 0; padding: 0; }
+        .nav { padding: 20px; text-align: center; border-bottom: 1px solid #eee; font-weight: 700; letter-spacing: 1px; }
+        .hero { max-width: 500px; margin: 40px auto; padding: 20px; text-align: center; }
+        .product-img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .badge { background: #fff0f0; color: #ff4d4d; padding: 6px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; }
+        h1 { font-size: 2.2rem; margin: 15px 0; line-height: 1.1; }
+        .price { font-size: 2.5rem; font-weight: 700; margin: 20px 0; color: var(--accent); }
+        .price span { font-size: 1rem; color: #999; text-decoration: line-through; margin-right: 10px; }
         
-        .thanks-card { max-width: 400px; padding: 40px 20px; border: 1px solid #eee; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        /* The Payment Button */
+        .pay-btn { background: var(--primary); color: white; padding: 20px; border-radius: 15px; text-decoration: none; display: block; font-weight: 700; font-size: 1.2rem; transition: 0.3s; margin-bottom: 10px; }
+        .pay-btn:hover { transform: scale(1.02); background: #333; }
         
-        /* Success Animation */
-        .check-icon { width: 80px; height: 80px; background: #ecfdf5; color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 20px; animation: scaleUp 0.5s ease-out; }
-        @keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }
-
-        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
-        p { color: #666; font-size: 0.95rem; margin-bottom: 30px; line-height: 1.5; }
-
-        .download-box { background: #f9f9f9; padding: 20px; border-radius: 20px; margin-bottom: 20px; }
-        .file-name { font-weight: 700; display: block; margin-bottom: 15px; color: #333; }
+        /* Reviews Section */
+        .reviews { background: #f9f9f9; padding: 40px 20px; border-radius: 30px; margin-top: 40px; text-align: left; }
+        .review { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .stars { color: #ffb400; font-size: 0.9rem; }
+        .rev-text { font-size: 0.95rem; font-weight: 500; margin: 5px 0; }
+        .rev-user { font-size: 0.8rem; color: #888; text-transform: uppercase; }
         
-        .download-btn { background: var(--primary); color: white; padding: 16px 30px; border-radius: 12px; text-decoration: none; display: block; font-weight: 700; transition: 0.3s; }
-        .download-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        .support-text { font-size: 0.8rem; color: #999; margin-top: 20px; }
-        .support-link { color: var(--primary); font-weight: 600; text-decoration: underline; cursor: pointer; }
+        .footer { padding: 40px; font-size: 0.8rem; color: #ccc; }
     </style>
 </head>
 <body>
 
-    <div class="thanks-card">
-        <div class="check-icon">✓</div>
-        <h1>Payment Verified!</h1>
-        <p>Thank you for your purchase. Your digital blueprint is ready for download below.</p>
+    <div class="nav">DIGITAL ASSETS PRO</div>
 
-        <div class="download-box">
-            <span class="file-name">📂 Viral_Blueprint_2026.pdf</span>
-            <a href="https://bit.ly/ViralGrowth2026" class="download-btn" download>Download Now (PDF)</a>
-        </div>
-
-        <p class="support-text">
-            Having trouble? <br>
-            DM us on Instagram or <span class="support-link">Contact Support</span>
-        </p>
+    <div class="hero">
+        <span class="badge">ONLY 4 SLOTS LEFT AT THIS PRICE</span>
+        <h1>The 2026 Viral Content Blueprint</h1>
+        <p style="color: #666;">Get the exact PDF guide used to gain 10k followers in 30 days. Delivered instantly.</p>
         
-        <div style="margin-top: 30px; font-size: 0.7rem; color: #ccc;">
-            Transaction ID: #BPT-9304945520
+        <div class="price"><span>₹499</span> ₹9</div>
+
+        <a href="upi://pay?pa=9304945520@ybl&pn=Nitin&am=9&cu=INR&tn=DigitalProductAccess" class="pay-btn">
+            Pay ₹9 & Get File ⚡
+        </a>
+        <p style="font-size: 0.7rem; color: #aaa;">Clicking above opens your UPI App (GPay/PhonePe/Paytm)</p>
+
+        <div class="reviews">
+            <h3 style="margin-top: 0;">Verified Buyers (4.9/5)</h3>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <div class="rev-text">"The PDF is amazing. Helped me fix my Instagram bio and hooks immediately."</div>
+                <div class="rev-user">Sumit Verma • Verified Buyer</div>
+            </div>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <div class="rev-text">"Best 9 rupees I've ever spent. The viral hooks actually work!"</div>
+                <div class="rev-user">Anjali P. • Verified Buyer</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Secure Encryption • Instant UPI Settlement<br>
+            Powered by 9304945520@ybl
         </div>
     </div>
 
