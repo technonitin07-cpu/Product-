@@ -3,106 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Blueprint | Premium Access</title>
+    <title>Payment Successful | Download Your File</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #000; --secondary: #6B7280; --accent: #10B981; --border: #E5E7EB; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FFF; color: var(--primary); margin: 0; }
+        :root { --primary: #000; --accent: #10B981; --bg: #ffffff; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--primary); margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
         
-        .container { max-width: 480px; margin: 0 auto; padding: 20px; }
+        .thanks-card { max-width: 400px; padding: 40px 20px; border: 1px solid #eee; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         
-        /* Premium Header */
-        .top-nav { text-align: center; padding: 15px; border-bottom: 1px solid var(--border); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        /* Success Animation */
+        .check-icon { width: 80px; height: 80px; background: #ecfdf5; color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 20px; animation: scaleUp 0.5s ease-out; }
+        @keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }
 
-        /* Hero Section */
-        .hero { text-align: center; padding: 40px 0; }
-        .promo-pill { background: #F3F4F6; color: #374151; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; margin-bottom: 20px; display: inline-block; }
-        h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -1.5px; margin: 10px 0; }
-        .sub-text { color: var(--secondary); font-size: 1rem; margin-bottom: 30px; }
+        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
+        p { color: #666; font-size: 0.95rem; margin-bottom: 30px; line-height: 1.5; }
 
-        /* Product Preview */
-        .product-card { border: 1px solid var(--border); border-radius: 24px; padding: 24px; text-align: center; margin-bottom: 30px; background: #FAFAFA; }
-        .price-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; }
-        .old-price { text-decoration: line-through; color: #9CA3AF; font-size: 1.2rem; }
-        .current-price { font-size: 3rem; font-weight: 800; color: var(--accent); }
+        .download-box { background: #f9f9f9; padding: 20px; border-radius: 20px; margin-bottom: 20px; }
+        .file-name { font-weight: 700; display: block; margin-bottom: 15px; color: #333; }
+        
+        .download-btn { background: var(--primary); color: white; padding: 16px 30px; border-radius: 12px; text-decoration: none; display: block; font-weight: 700; transition: 0.3s; }
+        .download-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        /* Payment Button */
-        .pay-btn { background: var(--primary); color: white; padding: 20px; border-radius: 18px; text-decoration: none; display: block; font-weight: 700; font-size: 1.2rem; transition: 0.2s; border: none; width: 100%; cursor: pointer; }
-        .pay-btn:hover { background: #222; transform: translateY(-2px); }
-
-        /* Social Proof Ticker */
-        .scrolling-proof { background: #000; color: #FFF; font-size: 0.75rem; padding: 10px 0; white-space: nowrap; overflow: hidden; margin-top: 10px; border-radius: 8px; }
-        .ticker-wrap { display: inline-block; animation: ticker 20s linear infinite; }
-        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
-        /* Reviews */
-        .section-title { font-size: 1.2rem; font-weight: 700; margin: 40px 0 20px; border-bottom: 1px solid #EEE; padding-bottom: 10px; }
-        .review { background: #FFF; border: 1px solid #EEE; padding: 15px; border-radius: 16px; margin-bottom: 12px; font-size: 0.9rem; }
-        .stars { color: #F59E0B; margin-bottom: 5px; }
-
-        /* FAQ */
-        .faq-item { text-align: left; padding: 15px 0; border-bottom: 1px solid #F3F4F6; }
-        .faq-q { font-weight: 700; font-size: 0.95rem; margin-bottom: 5px; }
-        .faq-a { color: var(--secondary); font-size: 0.85rem; }
-
-        /* Footer */
-        .trust-badges { display: flex; justify-content: space-around; margin-top: 30px; opacity: 0.5; filter: grayscale(1); }
-        .badge-icon { font-size: 0.7rem; font-weight: 700; }
+        .support-text { font-size: 0.8rem; color: #999; margin-top: 20px; }
+        .support-link { color: var(--primary); font-weight: 600; text-decoration: underline; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <div class="top-nav">ULTRA-FAST DIGITAL DELIVERY</div>
+    <div class="thanks-card">
+        <div class="check-icon">✓</div>
+        <h1>Payment Verified!</h1>
+        <p>Thank you for your purchase. Your digital blueprint is ready for download below.</p>
 
-    <div class="container">
-        <div class="hero">
-            <div class="promo-pill">FLASH SALE: NEXT 10 MINUTES</div>
-            <h1>The Viral Blueprint.</h1>
-            <p class="sub-text">Everything you need to master Instagram in 2026. Instant download after payment.</p>
+        <div class="download-box">
+            <span class="file-name">📂 Viral_Blueprint_2026.pdf</span>
+            <a href="https://bit.ly/ViralGrowth2026" class="download-btn" download>Download Now (PDF)</a>
+        </div>
 
-            <div class="product-card">
-                <div class="price-row">
-                    <span class="old-price">₹499</span>
-                    <span class="current-price">₹9</span>
-                </div>
-                <a href="upi://pay?pa=9304945520@ybl&pn=Nitin&am=9&cu=INR&tn=DigitalProductAccess" class="pay-btn">
-                    Pay via UPI & Unlock 🔓
-                </a>
-                <div class="scrolling-proof">
-                    <div class="ticker-wrap">
-                        🔥 Rahul just bought | ⚡ Anjali paid ₹9 | ✅ Sumit unlocked file | 🚀 New purchase from Bihar | 🌟 5/5 Rating
-                    </div>
-                </div>
-            </div>
-
-            <div class="trust-badges">
-                <div class="badge-icon">✅ VERIFIED UPI</div>
-                <div class="badge-icon">⚡ INSTANT LINK</div>
-                <div class="badge-icon">🔒 SSL SECURE</div>
-            </div>
-
-            <div class="section-title">Success Stories</div>
-            <div class="review">
-                <div class="stars">★★★★★</div>
-                <div style="font-weight: 700;">"Mind blowing quality!"</div>
-                <p style="margin: 5px 0;">I thought it was a scam for ₹9, but the value inside is worth ₹999 easy.</p>
-                <small style="color: #999;">Deepak R. • Verified Purchase</small>
-            </div>
-            
-            <div class="section-title">Common Questions</div>
-            <div class="faq-item">
-                <div class="faq-q">Is this a one-time payment?</div>
-                <div class="faq-a">Yes. Pay ₹9 once and keep the file forever. No hidden charges.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">How do I get the file?</div>
-                <div class="faq-a">The download link is provided immediately after payment confirmation.</div>
-            </div>
-
-            <p style="font-size: 0.7rem; color: #999; margin-top: 50px;">
-                Securely processed to 9304945520@ybl<br>
-                © 2026 Blueprint Digital
-            </p>
+        <p class="support-text">
+            Having trouble? <br>
+            DM us on Instagram or <span class="support-link">Contact Support</span>
+        </p>
+        
+        <div style="margin-top: 30px; font-size: 0.7rem; color: #ccc;">
+            Transaction ID: #BPT-9304945520
         </div>
     </div>
 
