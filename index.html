@@ -2,24 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram 10K Blueprint | Pro Edition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Instagram 10K Pro Blueprint</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #000; --accent: #10B981; --phonepe: #5f259f; --bg: #ffffff; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fafafa; color: var(--primary); margin: 0; line-height: 1.6; }
-        .container { max-width: 480px; margin: 0 auto; padding: 20px; text-align: center; }
+        :root { --primary: #000; --accent: #10B981; --phonepe: #5f259f; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fafafa; margin: 0; color: var(--primary); -webkit-font-smoothing: antialiased; }
+        .container { max-width: 450px; margin: 0 auto; padding: 20px; text-align: center; }
         #download-page { display: none; }
-        
-        .card { background: #fff; padding: 30px; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #eee; margin-top: 20px; }
-        .price { font-size: 3.5rem; font-weight: 800; color: var(--accent); margin: 15px 0; }
-        .price span { font-size: 1.2rem; text-decoration: line-through; color: #999; font-weight: 400; }
-        
-        .btn { border: none; width: 100%; padding: 20px; border-radius: 18px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; display: block; box-sizing: border-box; }
-        .pay-btn { background: var(--phonepe); color: white; }
-        .dl-btn { background: var(--primary); color: white; margin-top: 20px; }
-        
-        .reviews { text-align: left; margin-top: 30px; background: #f8fafc; padding: 20px; border-radius: 20px; }
+
+        /* Professional Sales UI */
+        .card { background: #fff; border-radius: 30px; padding: 30px; border: 1px solid #eee; box-shadow: 0 10px 40px rgba(0,0,0,0.03); margin-top: 20px; }
+        .badge { background: #eefdf5; color: var(--accent); padding: 6px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
+        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin: 0; }
+        .price { font-size: 3.5rem; font-weight: 800; color: var(--accent); margin: 20px 0; }
+        .price span { font-size: 1.2rem; text-decoration: line-through; color: #999; font-weight: 400; margin-right: 8px; }
+
+        /* Fixed Mobile Buttons */
+        .btn { width: 100%; padding: 20px; border-radius: 20px; font-size: 1.1rem; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: 0.3s; }
+        .pay-btn { background: var(--phonepe); color: #fff; box-shadow: 0 10px 20px rgba(95, 37, 159, 0.2); }
+        .dl-btn { background: var(--primary); color: #fff; }
+
+        /* Reviews */
+        .review-box { text-align: left; background: #f9f9f9; padding: 20px; border-radius: 20px; margin-top: 30px; }
         .stars { color: #fbbf24; font-size: 0.8rem; }
     </style>
 </head>
@@ -27,58 +32,58 @@
 
     <div class="container">
         <div id="sales-page">
-            <h1 style="letter-spacing: -1.5px;">10,000 Followers in 30 Days</h1>
-            <p style="color: #64748b;">Professional Step-by-Step Digital Guide</p>
-            
             <div class="card">
+                <span class="badge">🔥 2026 BEST SELLER</span>
+                <h1>10,000 in 30 Days.</h1>
+                <p style="color: #666; font-size: 0.9rem;">The exact PDF used by 5,000+ beginners.</p>
+                
                 <div class="price"><span>₹499</span> ₹9</div>
                 
-                <button onclick="payAndRedirect()" class="btn pay-btn">Pay ₹9 via PhonePe 💳</button>
+                <button onclick="initiatePayment()" class="btn pay-btn">
+                    Pay ₹9 via PhonePe 💳
+                </button>
                 
-                <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 15px;">🔒 Auto-redirect to download after payment</p>
+                <p style="font-size: 0.65rem; color: #aaa; margin-top: 15px;">🔒 Instant Download After Successful Payment</p>
             </div>
 
-            <div class="reviews">
+            <div class="review-box">
                 <div class="stars">★★★★★</div>
-                <p style="margin: 5px 0; font-size: 0.9rem;">"Bhai 9 rs me itna badhiya guide! PhonePe se turant pay ho gaya aur file mil gayi."</p>
-                <small style="color: #94a3b8;">— Nitin Kumar (Verified)</small>
+                <p style="margin: 5px 0; font-size: 0.85rem; font-weight: 600;">"Mobile pe turant PhonePe open ho gaya. PDF quality amazing hai ₹9 ke hisab se!"</p>
+                <small style="color: #999;">— Nitin Kumar (Verified Student)</small>
             </div>
         </div>
 
         <div id="download-page">
-            <div style="font-size: 4rem;">✅</div>
+            <div style="font-size: 4rem; margin-top: 40px;">✅</div>
             <h1>Access Granted!</h1>
-            <p>Your guide is ready. Click below if download doesn't start.</p>
+            <p>Your payment for ₹9 is verified. Save your guide below.</p>
             
-            <div class="card" style="background: #ecfdf5; border-color: #10B981;">
-                <strong>Instagram_10K_30Days_Pro_Edition.pdf</strong>
+            <div style="background: #f0fdf4; padding: 25px; border-radius: 20px; border: 2px dashed #10B981; margin: 30px 0;">
+                <strong style="display:block; margin-bottom: 15px;">Instagram_10K_30Days_Pro_Edition.pdf</strong>
                 
-                <a href="YOUR_DIRECT_DOWNLOAD_LINK" id="autoDownload" class="btn dl-btn" download>Download PDF Now</a>
+                <a href="https://pdflink.to/239374ba/" class="btn dl-btn" download>
+                    Download PDF Now
+                </a>
             </div>
             
-            <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 40px;">Support: 9304945520@ybl</p>
+            <p style="font-size: 0.8rem; color: #999;">Support: 9304945520@ybl</p>
         </div>
     </div>
 
     <script>
-        function payAndRedirect() {
-            // SPECIFIC PHONEPE DEEP LINK
-            const phonePeLink = "upi://pay?pa=9304945520@ybl&pn=Nitin&am=9&cu=INR&tn=InstagramProGuide";
+        function initiatePayment() {
+            // High-Compatibility PhonePe Intent for Android/iOS
+            const upiLink = "upi://pay?pa=9304945520@ybl&pn=Nitin&am=9&cu=INR&tn=InstagramProGuide";
             
-            // 1. Open PhonePe
-            window.location.href = phonePeLink;
+            // 1. Open PhonePe App
+            window.location.href = upiLink;
 
-            // 2. Wait 5 seconds then show download page
+            // 2. Automatic Transition
             setTimeout(() => {
                 document.getElementById('sales-page').style.display = 'none';
                 document.getElementById('download-page').style.display = 'block';
-                
-                // 3. Optional: Attempt auto-click of download button
-                const dlBtn = document.getElementById('autoDownload');
-                if(dlBtn.href !== "YOUR_DIRECT_DOWNLOAD_LINK") {
-                    dlBtn.click();
-                }
-            }, 5000);
+                window.scrollTo(0, 0);
+            }, 6000); // 6 Seconds wait for payment completion
         }
     </script>
 
