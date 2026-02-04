@@ -3,104 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram 10K Blueprint | Auto-Pay & Access</title>
+    <title>Instagram 10K Pro Blueprint | Official Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #000; --accent: #10B981; --phonepe: #5f259f; --bg: #ffffff; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--primary); margin: 0; line-height: 1.6; }
+        :root { --primary: #000; --accent: #10B981; --phonepe: #5f259f; --bg: #ffffff; --card: #f8fafc; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--primary); margin: 0; line-height: 1.6; overflow-x: hidden; }
         
-        .top-banner { background: #000; color: #fff; text-align: center; padding: 10px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+        /* 1. TOP URGENCY BANNER */
+        .top-banner { background: #ff4d4d; color: #fff; text-align: center; padding: 10px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+
         .container { max-width: 480px; margin: 0 auto; padding: 20px; text-align: center; }
         
-        /* Section Hiding */
-        #access-page { display: none; }
+        /* Logic for Hiding Sections */
+        #payment-page, #download-page { display: none; }
 
-        /* UI Elements */
-        .hero-img { width: 100%; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin: 10px 0; }
-        .price-tag { font-size: 3rem; font-weight: 800; color: var(--accent); margin: 20px 0; }
-        .price-tag span { font-size: 1.2rem; text-decoration: line-through; color: #999; margin-right: 10px; }
+        /* 2. HERO SECTION */
+        .badge { background: #eefdf5; color: #10B981; padding: 6px 16px; border-radius: 100px; font-size: 0.7rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
+        h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -1.5px; margin: 0; line-height: 1.1; }
+        .sub-text { color: #64748b; margin-top: 15px; font-size: 1rem; }
 
-        /* Buttons */
-        .pay-btn { background: var(--phonepe); color: white; padding: 20px; border-radius: 18px; text-decoration: none; display: block; font-weight: 700; font-size: 1.2rem; border: none; width: 100%; cursor: pointer; transition: 0.3s; }
-        .download-btn { background: var(--primary); color: white; padding: 20px; border-radius: 18px; text-decoration: none; display: block; font-weight: 700; font-size: 1.2rem; }
+        /* 3. PRICE & CTA */
+        .price-card { background: var(--card); border: 1px solid #e2e8f0; border-radius: 24px; padding: 30px; margin: 30px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.02); }
+        .price-tag { font-size: 3.5rem; font-weight: 800; color: var(--primary); margin-bottom: 20px; }
+        .price-tag span { font-size: 1.2rem; text-decoration: line-through; color: #94a3b8; font-weight: 400; }
+        
+        .main-btn { background: var(--primary); color: #fff; padding: 20px; border-radius: 18px; text-decoration: none; display: block; font-weight: 700; font-size: 1.2rem; border: none; width: 100%; cursor: pointer; transition: 0.3s; }
+        .main-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .phonepe-btn { background: var(--phonepe); }
 
-        /* Reviews */
-        .reviews { margin-top: 40px; text-align: left; background: #f9f9f9; padding: 20px; border-radius: 20px; }
-        .review-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .stars { color: #F59E0B; }
+        /* 4. SOCIAL PROOF TICKER */
+        .ticker { background: #000; color: #fff; padding: 8px; font-size: 0.7rem; overflow: hidden; white-space: nowrap; margin: 20px -20px; }
+        .ticker-move { display: inline-block; animation: scroll 20s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* 5. WHAT'S INSIDE SECTION */
+        .features { text-align: left; margin-top: 40px; }
+        .feature-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; background: #fff; border: 1px solid #f1f5f9; padding: 15px; border-radius: 16px; }
+        .check { color: var(--accent); font-weight: 900; }
+
+        /* 6. REVIEWS */
+        .reviews { margin-top: 50px; text-align: left; border-top: 1px solid #eee; padding-top: 30px; }
+        .review-card { background: var(--card); padding: 20px; border-radius: 20px; margin-bottom: 15px; border: 1px solid #f1f5f9; }
+        .stars { color: #fbbf24; font-size: 0.8rem; margin-bottom: 5px; }
+        .rev-user { font-size: 0.75rem; font-weight: 700; color: #94a3b8; margin-top: 10px; }
+
+        /* 7. DOWNLOAD PAGE ELEMENTS */
+        .success-icon { font-size: 4rem; color: var(--accent); margin-bottom: 20px; }
+        .download-box { background: #f0fdf4; border: 2px dashed var(--accent); padding: 30px; border-radius: 24px; margin: 30px 0; }
     </style>
 </head>
 <body>
 
-    <div class="top-banner">⚡ INSTANT ACCESS AFTER UPI PAYMENT</div>
+    <div class="top-banner">🔥 OFFER EXPIRES IN 09:57 | ONLY ₹9</div>
 
     <div class="container">
         
         <div id="sales-page">
-            <h1>10,000 Followers in 30 Days</h1>
-            <p style="color: #666;">Get the exact PDF guide used by 5,000+ creators.</p>
-            
-            <div class="price-tag"><span>₹499</span> ₹9</div>
+            <span class="badge">PRO EDITION 2026</span>
+            <h1>10,000 Real Followers.</h1>
+            <p class="sub-text">The exact step-by-step blueprint to master Instagram in 30 days without ads.</p>
 
-            <button class="pay-btn" onclick="openPhonePe()">
-                Pay ₹9 via PhonePe 💳
-            </button>
-            
-            <p style="font-size: 0.7rem; color: #999; margin-top: 15px;">
-                Secure payment to 9304945520@ybl. Redirecting to download instantly.
-            </p>
+            <div class="price-card">
+                <div class="price-tag"><span>₹499</span> ₹9</div>
+                <button class="main-btn" onclick="goToPayment()">Get Instant Access ⚡</button>
+                <p style="font-size: 0.65rem; color: #94a3b8; margin-top: 15px;">🔒 256-Bit Secure Digital Delivery</p>
+            </div>
+
+            <div class="ticker">
+                <div class="ticker-move">✅ Nitin just bought | ⭐ 4.9/5 Rating | ⚡ 2,400+ Active Students | 🔥 Trending in India</div>
+            </div>
+
+            <div class="features">
+                <h3>Inside this Pro Guide:</h3>
+                <div class="feature-item"><span class="check">✓</span> <div><strong>50+ Viral Hooks:</strong> Stop the scroll instantly.</div></div>
+                <div class="feature-item"><span class="check">✓</span> <div><strong>DM Selling Scripts:</strong> Turn followers into customers.</div></div>
+                <div class="feature-item"><span class="check">✓</span> <div><strong>30-Day Action Plan:</strong> Exact reels to post daily.</div></div>
+            </div>
 
             <div class="reviews">
-                <h3>Customer Reviews (4.9/5)</h3>
-                <div class="review-item">
+                <h3>Student Success Stories</h3>
+                <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <strong>"Unbelievable Value!"</strong>
-                    <p style="font-size: 0.85rem; margin: 5px 0;">Paid ₹9 and got the file immediately. The 50 viral hooks are amazing.</p>
-                    <small>— Karan J.</small>
+                    <p style="margin:0; font-size:0.9rem;">"Bhai kamaal hai! ₹9 mein itna value? My reels views went from 200 to 5k in just 4 days."</p>
+                    <div class="rev-user">Sumit K. • Verified Buyer</div>
                 </div>
-                <div class="review-item">
+                <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <strong>"Best for Beginners"</strong>
-                    <p style="font-size: 0.85rem; margin: 5px 0;">Followed the 30-day plan and gained 1,200 followers in my first week!</p>
-                    <small>— Megha S.</small>
+                    <p style="margin:0; font-size:0.9rem;">"The DM scripts are the real game changer. I sold my first service for ₹999 yesterday!"</p>
+                    <div class="rev-user">Anjali P. • Verified Buyer</div>
                 </div>
             </div>
         </div>
 
-        <div id="access-page">
-            <div style="font-size: 4rem;">✅</div>
-            <h1>Payment Successful!</h1>
-            <p>Your guide is ready for download. Please save it to your device now.</p>
+        <div id="payment-page">
+            <h1>Secure Checkout</h1>
+            <p>Complete payment to unlock your download.</p>
             
-            <div style="background: #f0fdf4; padding: 20px; border-radius: 15px; margin: 20px 0;">
-                <strong>Instagram_10K_30Days_Pro_Edition.pdf</strong>
+            <div class="price-card" style="text-align: left;">
+                <p style="margin: 0; font-size: 0.8rem; color: #64748b;">ORDER SUMMARY</p>
+                <h3 style="margin: 5px 0;">Instagram 10K Blueprint</h3>
+                <p style="font-size: 0.9rem; color: #64748b;">(Pro Edition PDF)</p>
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 1.5rem;">
+                    <span>Total:</span>
+                    <span style="color: var(--accent);">₹9.00</span>
+                </div>
             </div>
 
-            <a href="YOUR_DIRECT_GOOGLE_DRIVE_LINK" class="download-btn" download>
-                Download Guide Now
-            </a>
+            <button class="main-btn phonepe-btn" onclick="startAutoPayment()">
+                Pay via PhonePe / UPI 💳
+            </button>
+            <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 20px;">After payment, stay on this page for 5 seconds.</p>
+        </div>
 
-            <p style="font-size: 0.8rem; margin-top: 30px; color: #999;">
-                Having trouble? WhatsApp: 9304945520
+        <div id="download-page">
+            <div class="success-icon">✅</div>
+            <h1>Access Granted!</h1>
+            <p>Your payment was successful. Download your guide below.</p>
+            
+            <div class="download-box">
+                <span style="font-weight: 800; display: block; margin-bottom: 20px;">📂 Instagram_10K_30Days_Pro_Edition.pdf</span>
+                
+                <a href="YOUR_GOOGLE_DRIVE_LINK" class="main-btn" style="background: var(--accent);" download>
+                    Download PDF Now
+                </a>
+            </div>
+
+            <div class="review-card" style="background: #fff; border-color: var(--accent);">
+                <p style="font-size: 0.8rem; font-weight: 700; color: var(--accent);">🔥 BONUS UNLOCKED:</p>
+                <p style="font-size: 0.85rem; margin: 0;">You also get our 'Top 20 Reel Templates' inside the guide!</p>
+            </div>
+
+            <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 40px;">
+                Support: 9304945520@ybl | WhatsApp: 9304945520
             </p>
         </div>
 
     </div>
 
     <script>
-        function openPhonePe() {
-            // This is the PhonePe specific deep link format
-            const upiLink = "upi://pay?pa=9304945520@ybl&pn=Nitin&am=9&cu=INR&tn=InstagramBlueprintPro";
-            
-            // Try to open PhonePe
-            window.location.href = upiLink;
+        function goToPayment() {
+            document.getElementById('sales-page').style.display = 'none';
+            document.getElementById('payment-page').style.display = 'block';
+            window.scrollTo(0,0);
+        }
 
-            // Automatically switch to the Access page after 5 seconds
+        function startAutoPayment() {
+            const upiUrl = "upi://pay?pa=9304945520@ybl&pn=Nitin&am=9&cu=INR&tn=InstagramBlueprintPro";
+            
+            // Try to open UPI App
+            window.location.href = upiUrl;
+
+            // Wait 6 seconds (User pays), then show download
             setTimeout(() => {
-                document.getElementById('sales-page').style.display = 'none';
-                document.getElementById('access-page').style.display = 'block';
-            }, 5000); 
+                document.getElementById('payment-page').style.display = 'none';
+                document.getElementById('download-page').style.display = 'block';
+                window.scrollTo(0,0);
+            }, 6000);
         }
     </script>
 
